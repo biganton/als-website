@@ -1,0 +1,481 @@
+/* Ogólne style */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+/* Pasek nawigacji */
+#navbar {
+    background-color: #66069d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 10vh;
+}
+
+.navbar_link {
+    margin-right: 30px;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar_link:hover {
+    color: rgb(200, 45, 192);
+}
+
+/* Menu Hamburger */
+.menu-icon .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 3px auto;
+    background-color: whitesmoke;
+}
+
+#menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Style dla mobilnego menu */
+@media (max-width: 768px) {
+    #navbar > div {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #66069d;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #navbar div a {
+        margin: 0;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #navbar div a:last-child {
+        border-bottom: none;
+    }
+
+    #menu-toggle {
+        display: flex;
+    }
+}
+
+
+/* Strona główna */
+#landing {
+    background-image: url("assets/debil.jpeg");
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@media (min-width: 768px) {
+    #landing {
+        background-image: url("./assets/img/Group_1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:unset;
+    }
+}
+
+/* Sekcja "O nas" */
+#welcome {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    height: auto; /* Zmiana na auto, aby dopasować wysokość do zawartości */
+    padding: 40px 0; /* Dodanie paddingu dla lepszego wyglądu na mobilnych */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid #66069d;
+    box-sizing: border-box;
+}
+
+.content {
+    max-width: 1000px;
+    width: 90%;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 2em; /* Zmniejszenie wielkości czcionki dla mobilnych */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em; /* Zmniejszenie wielkości czcionki dla mobilnych */
+    margin-bottom: 20px; /* Zmniejszenie marginesu dla mobilnych */
+}
+
+.animated-section {
+    display: flex;
+    flex-direction: column; /* Zmiana na kolumnę dla mobilnych */
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px; /* Zmniejszenie marginesu dla mobilnych */
+    width: 100%;
+}
+
+.text-container {
+    flex: 1;
+    padding: 15px; /* Zmniejszenie paddingu dla mobilnych */
+    background-color: #66069d;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Dodanie marginesu dla mobilnych */
+}
+
+#animated-text {
+    font-size: 1.5em; /* Zmniejszenie wielkości czcionki dla mobilnych */
+}
+
+.image-container {
+    flex: 1;
+    padding: 15px; /* Zmniejszenie paddingu dla mobilnych */
+    box-sizing: border-box;
+}
+
+#animated-image {
+    width: 100%;
+    max-height: 60vh; /* Zmniejszenie maksymalnej wysokości dla mobilnych */
+}
+
+/* Style dla ekranów o szerokości większej niż 768px */
+@media (min-width: 769px) {
+    #welcome {
+        height: 100vh;
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .animated-section {
+        flex-direction: row; /* Przywrócenie układu w rzędzie dla większych ekranów */
+        margin-top: 50px;
+    }
+
+    .text-container {
+        padding: 20px;
+        margin-bottom: 0; /* Usunięcie marginesu dla większych ekranów */
+    }
+
+    #animated-text {
+        font-size: 1.8em;
+    }
+
+    .image-container {
+        padding: 20px;
+    }
+
+    #animated-image {
+        max-height: 80vh;
+    }
+}
+
+
+/* Tabela wyników */
+#scores {
+    height: 100vh;
+    background-color: #66069d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scrapedTable {
+    height: inherit;
+    width: 95%; /* Szerokość kontenera tabeli */
+    overflow: auto; /* Dodane na wypadek, gdyby tabela była zbyt szeroka */
+    box-sizing: border-box;
+}
+
+#scrapedTable table {
+    width: 100%; /* Szerokość tabeli w stosunku do kontenera */
+    border-collapse: collapse;
+    font-size: 0.9em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin: 0 auto; /* Wyśrodkowanie tabeli w poziomie */
+}
+
+#scrapedTable th,
+#scrapedTable td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#scrapedTable th {
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: bold;
+}
+
+#scrapedTable tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+#scrapedTable tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+#scrapedTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+#scrapedTable a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#scrapedTable a:hover {
+    color: #8f00b3;
+    text-decoration: underline;
+}
+
+
+/* Styl dla przycisków paginacji */
+.dataTables_paginate .paginate_button {
+    background-color: rgb(200, 45, 192); /* Kolor tła przycisku */
+    color: #ffffff; /* Kolor tekstu przycisku */
+    margin: 0 2px; /* Margines między przyciskami */
+    padding: 5px 10px; /* Wewnętrzny odstęp przycisku */
+    border-radius: 4px; /* Zaokrąglenie krawędzi */
+    transition: background-color 0.3s ease; /* Animacja koloru tła */
+}
+
+/* Styl dla przycisku paginacji podczas najechania */
+.dataTables_paginate .paginate_button:hover {
+    background-color: #0056b3; /* Zmiana koloru tła podczas najechania */
+    text-decoration: none; /* Usunięcie podkreślenia */
+}
+
+/* Styl dla aktywnego przycisku paginacji (aktualna strona) */
+.dataTables_paginate .paginate_button.current {
+    background-color: #66069d; /* Kolor tła dla aktywnego przycisku */
+}
+
+/* Styl dla aktywnego przycisku paginacji podczas najechania */
+.dataTables_paginate .paginate_button.current:hover {
+    background-color: #4e0577; /* Zmiana koloru tła dla aktywnego przycisku podczas najechania */
+}
+
+
+
+
+
+/* Kafelki */
+#gallery {
+    background-color: #000000;
+}
+
+#rotating-image-mosaic {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.image-tile {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-tile .front,
+.image-tile .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.7s;
+}
+
+.image-tile .front {
+    transform: rotateY(0deg);
+}
+
+.image-tile .back {
+    transform: rotateY(180deg);
+}
+
+.image-tile.flipped .front {
+    transform: rotateY(-180deg);
+}
+
+.image-tile.flipped .back {
+    transform: rotateY(0deg);
+}
+
+/* Formularz kontaktowy */
+#contact {
+    padding: 30px 10px; /* Zmniejszenie paddingu dla mobilnych */
+    background-color: #f5f5f5;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Zmniejszenie marginesu dla mobilnych */
+    font-size: 1.5em; /* Zmniejszenie wielkości czcionki dla mobilnych */
+}
+
+#contact form {
+    max-width: 90%; /* Zwiększenie maksymalnej szerokości dla mobilnych */
+    margin: 0 auto;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 8px; /* Zmniejszenie marginesu dla mobilnych */
+    font-size: 0.9em; /* Zmniejszenie wielkości czcionki dla mobilnych */
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 8px; /* Zmniejszenie paddingu dla mobilnych */
+    margin-bottom: 15px; /* Zmniejszenie marginesu dla mobilnych */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em; /* Zmniejszenie wielkości czcionki dla mobilnych */
+}
+
+#contact input[type="submit"] {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 8px 12px; /* Zmniejszenie paddingu dla mobilnych */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9em; /* Zmniejszenie wielkości czcionki dla mobilnych */
+}
+
+#contact input[type="submit"]:hover {
+    background-color: #e056d4;
+}
+
+/* Style dla ekranów o szerokości większej niż 768px */
+@media (min-width: 769px) {
+    #contact {
+        padding: 50px 0;
+    }
+
+    #contact h2 {
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+
+    #contact form {
+        max-width: 600px;
+    }
+
+    #contact label {
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact textarea {
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 1em;
+    }
+
+    #contact input[type="submit"] {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+}
+
+
+/* Stopka */
+#footer {
+    background-color: #66069d;
+    padding: 20px 0;
+    color: whitesmoke;
+}
+
+@media (min-width: 769px) {
+    #footer{
+        height: 30vh;
+    }
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #e056d4;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: rgb(200, 45, 192);
+}
+
+.facebook-button {
+    display: inline-block;
+    background-color: #3b5998;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.facebook-button:hover {
+    background-color: #2d4373;
+}
