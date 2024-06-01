@@ -80,7 +80,7 @@ body {
 
 /* Strona główna */
 #landing {
-    background-image: url("assets/debil.jpeg");
+    background-image: url("assets/img/antoni.jpeg");
     height: 90vh;
     background-size: cover;
     background-repeat: no-repeat;
